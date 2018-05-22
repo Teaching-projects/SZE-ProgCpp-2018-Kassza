@@ -25,6 +25,7 @@ private:
 	int uborkaar;
 	int ketchupar;
 	int mustarar;
+	int salataar;
 
 public:
 	Hozzavalok();
@@ -43,6 +44,7 @@ public:
 	int getUborkaAr();
 	int getKetchuoAr();
 	int getMustarAr();
+	int getSalataAr();
 	void kiirat();
 
 	void kiiratsorszammal();

@@ -132,6 +132,16 @@ void Szamla::Kiir() {
 	}
 
 
+	if (EgB.size() != 0) {
+		for (EgyediBurger n : EgB) {
+			n.Kiir();
+			cout << "		";
+			cout << n.getAr() << endl;
+			ar = ar + n.getAr();
+			cout << "-----------------------------------------------------------" << endl;
+		}
+	}
+
 	if (Men.size() != 0) {
 		int melyik = 0;
 		for (Menu n : Men) {

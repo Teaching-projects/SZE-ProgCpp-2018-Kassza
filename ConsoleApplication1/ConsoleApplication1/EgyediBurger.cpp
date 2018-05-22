@@ -26,21 +26,27 @@ void EgyediBurger::HozzaAddAlapAnyagot(Hozzavalok e, int hozzaad) {
 	{
 	case 1:
 		alapanyag.push_back(e.getKetchup());
+		setAr(e.getKetchuoAr());
 		break;
 	case 2:
 		alapanyag.push_back(e.getMustar());
+		setAr(e.getMustarAr());
 		break;
 	case 3:
 		alapanyag.push_back(e.getSajt());
+		setAr(e.getSajtAr());
 		break;
 	case 4:
 		alapanyag.push_back(e.getUborka());
+		setAr(e.getUborkaAr());
 		break;
 	case 5:
 		alapanyag.push_back(e.getSalata());
+		setAr(e.getSalataAr());
 		break;
 	case 6:
 		alapanyag.push_back(e.getTofu());
+		setAr(e.getTofuAr());
 		break;
 	default:
 		break;
@@ -79,6 +85,14 @@ void EgyediBurger::Kiir() {
 	}
 }
 
+void EgyediBurger::setAr(int ar) {
+	this->ar = this->ar + ar;
+}
+
+void EgyediBurger::urit()
+{
+	alapanyag.clear();
+}
 
 int EgyediBurger::getAr() {
 	return ar;

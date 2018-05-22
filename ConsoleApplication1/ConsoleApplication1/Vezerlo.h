@@ -26,7 +26,7 @@ public:
 	int hamburger();
 	int UditoMeret();
 	int UditoFajta();
-	void Egyedi(Hozzavalok hozzavalo, EgyediBurger Egyedb);
+	EgyediBurger Egyedi(Hozzavalok hozzavalo, EgyediBurger Egyedb);
 	~Vezerlo();
 };
 

@@ -20,6 +20,7 @@ Hozzavalok::Hozzavalok()
 	 uborkaar=20;
 	 ketchupar=30;
 	 mustarar=35;
+	 salataar = 20;
 }
 
 string Hozzavalok::getPogacsa() {
@@ -87,6 +88,10 @@ int Hozzavalok::getKetchuoAr()
 int Hozzavalok::getMustarAr()
 {
 	return mustarar;
+}
+int Hozzavalok::getSalataAr()
+{
+	return salataar;
 }
 
 void Hozzavalok::kiirat() {

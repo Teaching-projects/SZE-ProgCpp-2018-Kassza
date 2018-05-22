@@ -135,8 +135,14 @@ void Vezerlo::vasarlas(SajtBurger s, SimaBurger si, VegaBurger v, EgyediBurger E
 		
 		}
 		break;
-		case 55:
-			Egyedi( h1 ,Egyedb);
+		case 55: //egyedi burger készítés
+			Egyedb= Egyedi( h1 ,Egyedb);
+			if (Egyedb.getAr() != 0) {
+				szamla.add(Egyedb);
+				Egyedb.urit();
+				Egyedb.setAr(Egyedb.getAr()*-1);
+				
+			}
 			break;
 		case 56: //kiir
 			system("cls");
@@ -241,7 +247,7 @@ int Vezerlo::UditoFajta() {
 	}
 }
 
-void Vezerlo::Egyedi(Hozzavalok h1,EgyediBurger Egyedb)
+EgyediBurger Vezerlo::Egyedi(Hozzavalok h1,EgyediBurger Egyedb)
 {
 	bool kilep = false;
 	bool kilepbelso = false;
@@ -251,34 +257,34 @@ void Vezerlo::Egyedi(Hozzavalok h1,EgyediBurger Egyedb)
 		cout << "1.Hozzáadd" << endl << "2.Elvesz" << endl;
 		switch (_getch())
 		{
-		case 1://hozzáadd
+		case 49://hozzáadd
 			do
 			{
 				system("cls");
 				h1.kiiratsorszammal();
 				switch (_getch()) {
-				case 1:
+				case 49:
 					Egyedb.HozzaAddAlapAnyagot(h1, 1);
 					break;
-				case 2:
+				case 50:
 					Egyedb.HozzaAddAlapAnyagot(h1, 2);
 					break;
-				case 3:
+				case 51:
 					Egyedb.HozzaAddAlapAnyagot(h1, 3);
 					break;
-				case 4:
+				case 52:
 					Egyedb.HozzaAddAlapAnyagot(h1, 4);
 					break;
-				case 5:
+				case 53:
 					Egyedb.HozzaAddAlapAnyagot(h1, 5);
 					break;
-				case 6:
+				case 54:
 					Egyedb.HozzaAddAlapAnyagot(h1, 6);
 					break;
-				case 7:
+				case 55:
 					Egyedb.HozzaAddAlapAnyagot(h1, 7);
 					break;
-				case 8:
+				case 56:
 					Egyedb.HozzaAddAlapAnyagot(h1, 8);
 					break;
 				case 27:
@@ -287,37 +293,37 @@ void Vezerlo::Egyedi(Hozzavalok h1,EgyediBurger Egyedb)
 				default:
 					break;
 				}
-			} while (kilepbelso);
+			} while (!kilepbelso);
 			kilepbelso = false;
 			break;
-		case 2: // töröl
+		case 50: // töröl
 			do
 			{
 				system("cls");
 				h1.kiiratsorszammal();
 				switch (_getch()) {
-				case 1:
+				case 49:
 					Egyedb.ElveszAlapAnyagot(h1, 1);
 					break;
-				case 2:
+				case 50:
 					Egyedb.ElveszAlapAnyagot(h1, 2);
 					break;
-				case 3:
+				case 51:
 					Egyedb.ElveszAlapAnyagot(h1, 3);
 					break;
-				case 4:
+				case 52:
 					Egyedb.ElveszAlapAnyagot(h1, 4);
 					break;
-				case 5:
+				case 53:
 					Egyedb.ElveszAlapAnyagot(h1, 5);
 					break;
-				case 6:
+				case 54:
 					Egyedb.ElveszAlapAnyagot(h1, 6);
 					break;
-				case 7:
+				case 55:
 					Egyedb.ElveszAlapAnyagot(h1, 7);
 					break;
-				case 8:
+				case 56:
 					Egyedb.ElveszAlapAnyagot(h1, 8);
 					break;
 				case 27:
@@ -326,13 +332,16 @@ void Vezerlo::Egyedi(Hozzavalok h1,EgyediBurger Egyedb)
 				default:
 					break;
 				}
-			} while (kilep);
+			} while (!kilepbelso);
 			break;
-			kilep = false;
+			kilepbelso = false;
+		case 27:
+			kilep = true;
 		default:
 			break;
 		}
-	} while (kilep);
+	} while (!kilep);
+	return Egyedb;
 }
 
 
