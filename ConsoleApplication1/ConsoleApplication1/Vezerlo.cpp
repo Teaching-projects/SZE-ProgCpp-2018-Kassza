@@ -35,7 +35,8 @@ void Vezerlo::UjvasarlasKiiras()
 	cout << "4.Üdítõ" << endl;
 	cout << "5.Krumpli" << endl;
 	cout << "6.Menü" << endl;
-	cout << "7.Kiír" << endl;
+	cout << "7.Speciális" << endl;
+	cout << "8.Kiír" << endl;
 }
 
 void Vezerlo::vasarlas(SajtBurger s, SimaBurger si, VegaBurger v, SultKrumpli su, Udito ud, Menu me, Szamla szamla)
@@ -133,8 +134,11 @@ void Vezerlo::vasarlas(SajtBurger s, SimaBurger si, VegaBurger v, SultKrumpli su
 		
 		}
 		break;
+		case 55:
+			system("cls");
 
-		case 55: //kiir
+			break;
+		case 56: //kiir
 			system("cls");
 			szamla.Kiir();
 			getchar();

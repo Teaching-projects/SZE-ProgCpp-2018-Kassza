@@ -15,7 +15,6 @@ SajtBurger::SajtBurger()
 
 SajtBurger::SajtBurger(Hozzavalok e)
 {
-	menu = 0;
 	Ar = 400;
 	alapanyag.push_back(e.getPogacsa());
 	alapanyag.push_back(e.getHus());

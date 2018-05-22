@@ -6,15 +6,12 @@
 #include <list>
 #include <string>
 
-using namespace std;
-
 
 
 class SajtBurger :public Hamburger {
 private:
 	list<string> alapanyag;
 	string nev = "Sajtburger";
-	int menu;
 public:
 	SajtBurger();
 	SajtBurger(Hozzavalok e);
