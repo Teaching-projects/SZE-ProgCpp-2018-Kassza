@@ -149,6 +149,7 @@
   <ItemGroup>
     <ClInclude Include="Hamburger.h" />
     <ClInclude Include="Hozzavalok.h" />
+    <ClInclude Include="Menu.h" />
     <ClInclude Include="Sajtburger.h" />
     <ClInclude Include="SimaBurger.h" />
     <ClInclude Include="stdafx.h" />
@@ -161,6 +162,7 @@
     <ClCompile Include="ConsoleApplication1.cpp" />
     <ClCompile Include="Hamburger.cpp" />
     <ClCompile Include="Hozzavalok.cpp" />
+    <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Sajtburger.cpp" />
     <ClCompile Include="SimaBurger.cpp" />
     <ClCompile Include="stdafx.cpp">
