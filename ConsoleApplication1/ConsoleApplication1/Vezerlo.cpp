@@ -7,6 +7,7 @@
 #include "Hamburger.h" // absztrakt
 #include "SimaBurger.h"
 #include "SajtBurger.h"
+#include"EgyediBurger.h"
 #include "VegaBurger.h"
 #include "SultKrumpli.h"
 #include "Udito.h"
@@ -39,7 +40,7 @@ void Vezerlo::UjvasarlasKiiras()
 	cout << "8.Kiír" << endl;
 }
 
-void Vezerlo::vasarlas(SajtBurger s, SimaBurger si, VegaBurger v, SultKrumpli su, Udito ud, Menu me, Szamla szamla)
+void Vezerlo::vasarlas(SajtBurger s, SimaBurger si, VegaBurger v, EgyediBurger Egyedb,  SultKrumpli su, Udito ud, Menu me, Szamla szamla, Hozzavalok h1)
 {
 	bool exit = false;
 	int adag = 0;
@@ -135,8 +136,7 @@ void Vezerlo::vasarlas(SajtBurger s, SimaBurger si, VegaBurger v, SultKrumpli su
 		}
 		break;
 		case 55:
-			system("cls");
-
+			Egyedi( h1 ,Egyedb);
 			break;
 		case 56: //kiir
 			system("cls");
@@ -239,6 +239,100 @@ int Vezerlo::UditoFajta() {
 	default:
 		return -1;
 	}
+}
+
+void Vezerlo::Egyedi(Hozzavalok h1,EgyediBurger Egyedb)
+{
+	bool kilep = false;
+	bool kilepbelso = false;
+	system("cls");
+	do
+	{
+		cout << "1.Hozzáadd" << endl << "2.Elvesz" << endl;
+		switch (_getch())
+		{
+		case 1://hozzáadd
+			do
+			{
+				system("cls");
+				h1.kiiratsorszammal();
+				switch (_getch()) {
+				case 1:
+					Egyedb.HozzaAddAlapAnyagot(h1, 1);
+					break;
+				case 2:
+					Egyedb.HozzaAddAlapAnyagot(h1, 2);
+					break;
+				case 3:
+					Egyedb.HozzaAddAlapAnyagot(h1, 3);
+					break;
+				case 4:
+					Egyedb.HozzaAddAlapAnyagot(h1, 4);
+					break;
+				case 5:
+					Egyedb.HozzaAddAlapAnyagot(h1, 5);
+					break;
+				case 6:
+					Egyedb.HozzaAddAlapAnyagot(h1, 6);
+					break;
+				case 7:
+					Egyedb.HozzaAddAlapAnyagot(h1, 7);
+					break;
+				case 8:
+					Egyedb.HozzaAddAlapAnyagot(h1, 8);
+					break;
+				case 27:
+					kilepbelso = true;
+					break;
+				default:
+					break;
+				}
+			} while (kilepbelso);
+			kilepbelso = false;
+			break;
+		case 2: // töröl
+			do
+			{
+				system("cls");
+				h1.kiiratsorszammal();
+				switch (_getch()) {
+				case 1:
+					Egyedb.ElveszAlapAnyagot(h1, 1);
+					break;
+				case 2:
+					Egyedb.ElveszAlapAnyagot(h1, 2);
+					break;
+				case 3:
+					Egyedb.ElveszAlapAnyagot(h1, 3);
+					break;
+				case 4:
+					Egyedb.ElveszAlapAnyagot(h1, 4);
+					break;
+				case 5:
+					Egyedb.ElveszAlapAnyagot(h1, 5);
+					break;
+				case 6:
+					Egyedb.ElveszAlapAnyagot(h1, 6);
+					break;
+				case 7:
+					Egyedb.ElveszAlapAnyagot(h1, 7);
+					break;
+				case 8:
+					Egyedb.ElveszAlapAnyagot(h1, 8);
+					break;
+				case 27:
+					kilepbelso = true;
+					break;
+				default:
+					break;
+				}
+			} while (kilep);
+			break;
+			kilep = false;
+		default:
+			break;
+		}
+	} while (kilep);
 }
 
 

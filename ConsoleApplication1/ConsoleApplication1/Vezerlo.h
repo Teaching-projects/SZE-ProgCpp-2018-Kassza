@@ -8,6 +8,7 @@
 #include "SimaBurger.h"
 #include "SajtBurger.h"
 #include "VegaBurger.h"
+#include "EgyediBurger.h"
 #include "SultKrumpli.h"
 #include "Udito.h"
 #include "Menu.h"
@@ -20,11 +21,12 @@ public:
 	Vezerlo();
 	void MenuKiiras();
 	void UjvasarlasKiiras();
-	void vasarlas(SajtBurger s, SimaBurger si, VegaBurger v, SultKrumpli su, Udito ud, Menu me, Szamla szam);
+	void vasarlas(SajtBurger s, SimaBurger si, VegaBurger v, EgyediBurger Egyedb, SultKrumpli su, Udito ud, Menu me, Szamla szamla,Hozzavalok h1);
 	int Krumpli();
 	int hamburger();
 	int UditoMeret();
 	int UditoFajta();
+	void Egyedi(Hozzavalok hozzavalo, EgyediBurger Egyedb);
 	~Vezerlo();
 };
 

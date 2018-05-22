@@ -79,6 +79,7 @@ void EgyediBurger::Kiir() {
 	}
 }
 
+
 int EgyediBurger::getAr() {
 	return ar;
 }
