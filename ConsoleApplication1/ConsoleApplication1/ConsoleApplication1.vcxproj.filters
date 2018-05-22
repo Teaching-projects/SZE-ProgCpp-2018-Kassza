@@ -21,12 +21,24 @@
     <ClInclude Include="targetver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Hamburger.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Hozzavalok.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ConsoleApplication1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Hamburger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Hozzavalok.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
