@@ -6,6 +6,7 @@
 #include "SultKrumpli.h"
 #include "Udito.h"
 #include "VegaBurger.h"
+#include "EgyediBurger.h"
 #include "Menu.h"
 #include <list>
 
@@ -18,6 +19,7 @@ private:
 	list <Udito> Ud;
 	list <SultKrumpli> Kru;
 	list <Menu> Men;
+	list <EgyediBurger> EgB;
 	int ar = 0;
 public:
 	Szamla();
@@ -27,6 +29,7 @@ public:
 	void add(Udito s);
 	void add(SultKrumpli s);
 	void add(Menu s);
+	void add(EgyediBurger s);
 
 	void del(SajtBurger s);
 	void del(SimaBurger s);
@@ -34,6 +37,7 @@ public:
 	void del(Udito s);
 	void del(SultKrumpli s);
 	void del(Menu s);
+	void del(EgyediBurger s);
 	void Kiir();
 	~Szamla();
 };

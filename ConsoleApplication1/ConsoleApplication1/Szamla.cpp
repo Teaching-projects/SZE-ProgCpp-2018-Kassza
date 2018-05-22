@@ -37,6 +37,11 @@ void Szamla::add(Menu s)
 	Men.push_back(s);
 }
 
+void Szamla::add(EgyediBurger s)
+{
+	EgB.push_back(s);
+}
+
 void Szamla::del(SajtBurger s)
 {
 	SaB.pop_back();
@@ -65,6 +70,11 @@ void Szamla::del(SultKrumpli s)
 void Szamla::del(Menu s)
 {
 	Men.pop_back();
+}
+
+void Szamla::del(EgyediBurger s)
+{
+	EgB.pop_back();
 }
 
 void Szamla::Kiir() {
