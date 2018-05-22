@@ -27,6 +27,12 @@
     <ClInclude Include="Hozzavalok.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Sajtburger.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SimaBurger.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -39,6 +45,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Hozzavalok.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Sajtburger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SimaBurger.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

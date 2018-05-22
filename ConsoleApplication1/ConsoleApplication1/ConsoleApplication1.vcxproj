@@ -149,6 +149,8 @@
   <ItemGroup>
     <ClInclude Include="Hamburger.h" />
     <ClInclude Include="Hozzavalok.h" />
+    <ClInclude Include="Sajtburger.h" />
+    <ClInclude Include="SimaBurger.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
@@ -156,6 +158,8 @@
     <ClCompile Include="ConsoleApplication1.cpp" />
     <ClCompile Include="Hamburger.cpp" />
     <ClCompile Include="Hozzavalok.cpp" />
+    <ClCompile Include="Sajtburger.cpp" />
+    <ClCompile Include="SimaBurger.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
