@@ -21,12 +21,12 @@ private:
 	
 	int ar;
 	double kedvezmeny = 0.80;
-	void ArSzamolas();
+	void ArSzamolas(int melyik);
 
 public:
 	Menu();
 	void menuHozzaAdd(SimaBurger sima,int a, SajtBurger burger, int b, VegaBurger vega, int c, SultKrumpli krupli, Udito udito);
-	int getAr();
+	int getAr(int melyik);
 	void setKedvezmeny(double kedv);
 	double getKedvezmeny();
 	void Kiir(int hanyadik);

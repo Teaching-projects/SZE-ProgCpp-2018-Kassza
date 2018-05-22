@@ -127,8 +127,8 @@ void Szamla::Kiir() {
 		for (Menu n : Men) {
 			n.Kiir(melyik);
 			cout << "		";
-			cout << n.getAr() << endl;
-			ar = ar + n.getAr();
+			cout << n.getAr(melyik) << endl;
+			ar = ar + n.getAr(melyik);
 			cout << "-----------------------------------------------------------" << endl;
 			melyik++;
 		}

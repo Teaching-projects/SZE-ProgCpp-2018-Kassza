@@ -33,11 +33,12 @@ void Menu::menuHozzaAdd(SimaBurger sima, int a, SajtBurger burger,int b, VegaBur
 	this->udito.push_back(udito);
 }
 
-int Menu::getAr()
+int Menu::getAr(int i)
 {
-	ArSzamolas();
+	ArSzamolas(i);
 	return ar;
 }
+
 
 void Menu::setKedvezmeny(double kedv)
 {
@@ -50,9 +51,35 @@ double Menu::getKedvezmeny()
 }
 
 
-void Menu::ArSzamolas() {
+void Menu::ArSzamolas(int i) {
+	ar = 0;
 	if (sajtburger.size() != 0)
 	{
+		if (melyik[i] == 2) {
+			ar = ar + sajtburger[i].getAr();
+		}
+	}
+		if (vegaburger.size() != 0)
+		{
+			if (melyik[i] == 3) {
+				ar = ar + vegaburger[i].getAr();
+			}
+		}
+
+		if (simaburger.size() != 0)
+		{
+			if (melyik[i] == 1) {
+				ar = ar + simaburger[i].getAr();
+			}
+		}
+	ar = ar + krupli[i].getAr();
+	ar = ar + udito[i].getAr();
+	ar = ar * kedvezmeny;
+}
+
+void Menu::Kiir(int i){ 
+
+	if (sajtburger.size() != 0) {
 		if (melyik[i] == 2) {
 			sajtburger[i].KiirNev();
 			cout << endl;
@@ -60,35 +87,8 @@ void Menu::ArSzamolas() {
 			cout << endl;
 			udito[i].Kiir();
 			cout << endl;
+		}
 	}
-		for (SajtBurger n : sajtburger) {
-			this->ar = n.getAr();
-		}
-	if (vegaburger.size() != 0)
-		for (VegaBurger n : vegaburger) {
-			this->ar = n.getAr();
-		}
-	if (simaburger.size() != 0)
-		for (SimaBurger n : simaburger) {
-			this->ar = n.getAr();
-		}
-	ar = ar + krupli
-	ar = ar + udito.getAr();
-	ar = ar * kedvezmeny;
-}
-
-void Menu::Kiir(int i) { 
-
-	if (sajtburger.size() != 0) {
-			if (melyik[i] == 2) {
-				sajtburger[i].KiirNev();
-				cout << endl;
-				krupli[i].Kiir();
-				cout << endl;
-				udito[i].Kiir();
-				cout << endl;
-			}
-		}
 	
 	if (vegaburger.size() != 0) {
 		if (melyik[i] == 3) {
