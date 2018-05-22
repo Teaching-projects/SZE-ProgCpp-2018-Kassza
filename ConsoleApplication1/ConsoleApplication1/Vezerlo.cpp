@@ -254,12 +254,14 @@ EgyediBurger Vezerlo::Egyedi(Hozzavalok h1,EgyediBurger Egyedb)
 	system("cls");
 	do
 	{
-		cout << "1.Hozzáadd" << endl << "2.Elvesz" << endl;
+		cout << "1.Hozzáadd" << endl << "2.Elvesz" << endl<<"3.Kiír";
 		switch (_getch())
 		{
 		case 49://hozzáadd
 			do
 			{
+				 kilep = false;
+				kilepbelso = false;
 				system("cls");
 				h1.kiiratsorszammal();
 				switch (_getch()) {
@@ -293,6 +295,7 @@ EgyediBurger Vezerlo::Egyedi(Hozzavalok h1,EgyediBurger Egyedb)
 				default:
 					break;
 				}
+				system("cls");
 			} while (!kilepbelso);
 			kilepbelso = false;
 			break;
@@ -332,9 +335,17 @@ EgyediBurger Vezerlo::Egyedi(Hozzavalok h1,EgyediBurger Egyedb)
 				default:
 					break;
 				}
+				system("cls");
 			} while (!kilepbelso);
 			break;
 			kilepbelso = false;
+			system("cls");
+		case 51:
+			system("cls");
+			Egyedb.Kiir();
+			getchar();
+			system("cls");
+			break;
 		case 27:
 			kilep = true;
 		default:
