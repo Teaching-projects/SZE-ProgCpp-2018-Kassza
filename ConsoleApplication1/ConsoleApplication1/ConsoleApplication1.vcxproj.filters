@@ -36,6 +36,12 @@
     <ClInclude Include="VegaBurger.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="SultKrumpli.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Udito.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -57,6 +63,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="VegaBurger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SultKrumpli.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Udito.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
