@@ -92,6 +92,7 @@ void EgyediBurger::setAr(int ar) {
 void EgyediBurger::urit()
 {
 	alapanyag.clear();
+	ar = 0;
 }
 
 int EgyediBurger::getAr() {

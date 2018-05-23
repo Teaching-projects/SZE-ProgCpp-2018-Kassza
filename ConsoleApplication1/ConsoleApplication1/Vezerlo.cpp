@@ -157,8 +157,7 @@ void Vezerlo::vasarlas(SajtBurger s, SimaBurger si, VegaBurger v, EgyediBurger E
 			Egyedb= Egyedi( h1 ,Egyedb); //átadjuk a példányt és a visszatérési érték felülírja saját magát ez azért szükséges mivel minden esetben már lehet ezért nem tudjuk elérebeállítani a paramétereket ezért saját magár felül kell írnia mindig
 			if (Egyedb.getAr() != 0) { //ha hibás a bemeneti adat a példánynak nem lesz értéke ezért nem adhatjuk hozzá a listához
 				szamla.add(Egyedb); //listához adás
-				Egyedb.urit();//lista ürítése
-				Egyedb.setAr(Egyedb.getAr()*-1); //ár 0 ra vissza állítása nem szép de így egyel kevesebb method lett
+				Egyedb.urit();//lista ürítése ár változó beállítása ar=0;
 				
 			}
 			break;
