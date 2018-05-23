@@ -159,6 +159,7 @@
     <ClInclude Include="Szamla.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="Udito.h" />
+    <ClInclude Include="Vasarlo.h" />
     <ClInclude Include="VegaBurger.h" />
     <ClInclude Include="Vezerlo.h" />
   </ItemGroup>
@@ -180,6 +181,7 @@
     <ClCompile Include="SultKrumpli.cpp" />
     <ClCompile Include="Szamla.cpp" />
     <ClCompile Include="Udito.cpp" />
+    <ClCompile Include="Vasarlo.cpp" />
     <ClCompile Include="VegaBurger.cpp" />
     <ClCompile Include="Vezerlo.cpp" />
   </ItemGroup>
