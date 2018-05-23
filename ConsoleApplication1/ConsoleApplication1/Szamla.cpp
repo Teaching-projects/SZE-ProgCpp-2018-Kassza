@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "Szamla.h"
+#include "Ceg.h"
 #include <iostream>
 #include <fstream>
 #include <ctime>
@@ -159,7 +160,7 @@ void Szamla::Kiir() {
 	ar = 0;
 }
 
-void Szamla::SzamlaKeszites() {
+void Szamla::SzamlaKeszites(Ceg ceg) {
 	string datum;
 	time_t     now = time(0);
 	struct tm  tstruct;
@@ -167,10 +168,10 @@ void Szamla::SzamlaKeszites() {
 	tstruct = *localtime(&now);
 	strftime(buf, sizeof(buf), "%Y-%m-%d_%X", &tstruct);
 	datum = string(buf);
-	datum = datum + ".txt";
 
 	ofstream fout;
 	fout.open("p.txt"); // stringet nem tud kezelni a fordító 
+	fout << ceg.getNev()<<'\n'<<ceg.getAdoszam()<<'\n'<<'\n';
 	if (SaB.size() != 0) {
 		for (SajtBurger n : SaB) {
 			fout << n.getNev();
@@ -178,7 +179,6 @@ void Szamla::SzamlaKeszites() {
 			fout << n.getAr();
 			fout << endl;
 			ar = ar + n.getAr();
-			fout << "-----------------------------------------------------------" << endl;
 		}
 	}
 
@@ -189,7 +189,6 @@ void Szamla::SzamlaKeszites() {
 			fout << n.getAr();
 			fout << endl;
 			ar = ar + n.getAr();
-			fout << "-----------------------------------------------------------" << endl;
 		}
 	}
 
@@ -200,7 +199,6 @@ void Szamla::SzamlaKeszites() {
 			fout << n.getAr();
 			fout << endl;
 			ar = ar + n.getAr();
-			fout << "-----------------------------------------------------------" << endl;
 		}
 	}
 
@@ -210,7 +208,6 @@ void Szamla::SzamlaKeszites() {
 			fout << "	";
 			fout << n.getAr() << endl;
 			ar = ar + n.getAr();
-			fout << "-----------------------------------------------------------" << endl;
 		}
 	}
 
@@ -220,7 +217,6 @@ void Szamla::SzamlaKeszites() {
 			fout << "	";
 			fout << n.getAr() << endl;
 			ar = ar + n.getAr();
-			fout << "-----------------------------------------------------------" << endl;
 		}
 	}
 
@@ -235,7 +231,6 @@ void Szamla::SzamlaKeszites() {
 			fout << "		";
 			fout << n.getAr() << endl;
 			ar = ar + n.getAr();
-			fout << "-----------------------------------------------------------" << endl;
 		}
 	}
 
@@ -249,11 +244,12 @@ void Szamla::SzamlaKeszites() {
 			fout << "		";
 			fout << n.getAr(melyik) << endl;
 			ar = ar + n.getAr(melyik);
-			fout << "-----------------------------------------------------------" << endl;
 			melyik++;
 		}
 	}
-	fout << "		" << ar << endl;;
+	fout <<'\n'<< "		" << ar << '\n';
+	fout << "Köszönjük a vásárlást";
+	fout << '\n' << '\n' << datum;
 	ar = 0;
 	fout.close();
 }

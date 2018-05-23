@@ -8,6 +8,7 @@
 #include "VegaBurger.h"
 #include "EgyediBurger.h"
 #include "Menu.h"
+#include "Ceg.h"
 #include <list>
 #include <iostream>
 
@@ -41,7 +42,7 @@ public:
 	void del(EgyediBurger s);
 
 	void Kiir();
-	void SzamlaKeszites();
+	void SzamlaKeszites(Ceg c);
 	void Kiira(ofstream a);
 	~Szamla();
 };
