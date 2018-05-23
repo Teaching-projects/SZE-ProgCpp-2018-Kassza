@@ -7,6 +7,11 @@ void Naplo::NaplobaIras()
 
 }
 
+void Naplo::Naploeleres()
+{
+	NaplobaIras();
+}
+
 Naplo::Naplo()
 {
 }
