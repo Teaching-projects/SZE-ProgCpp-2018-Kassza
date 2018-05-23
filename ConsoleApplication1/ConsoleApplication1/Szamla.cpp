@@ -9,6 +9,7 @@
 using namespace std;
 Szamla::Szamla()
 {
+	
 }
 
 void Szamla::add(SajtBurger s)

@@ -20,6 +20,8 @@
 
 class Vezerlo
 {
+private:
+	bool tortenteleutes;
 public:
 	Vezerlo();
 	void MenuKiiras();

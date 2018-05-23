@@ -15,9 +15,12 @@
 #include "Szamla.h"
 #include "Vezerlo.h"
 #include "Vasarlo.h"
+
+
 using namespace std;
 Vezerlo::Vezerlo()
 {
+ tortenteleutes = false;
 }
 
 void Vezerlo::MenuKiiras()
@@ -53,18 +56,21 @@ void Vezerlo::vasarlas(SajtBurger s, SimaBurger si, VegaBurger v, EgyediBurger E
 		{
 		case 49: //sajtburger
 			szamla.add(s);//számlához add 
+			tortenteleutes = true;
 			break;
 		case 50: //sima
 			szamla.add(si);//számlához add 
+			tortenteleutes = true;
 			break;
 		case 51: //vega
 			szamla.add(v);//számlához add 
+			tortenteleutes = true;
 			break;
 		case 52: //üdítõ
 			seged = UditoFajta(); //adatbekérés hibás paraméter esetén -1 a visszatérési érték
 			if (seged != -1) { //ha jó az adatbemente
 				ud.setFajta(seged); //üdítõ fajtájának beállítása
-				seged= UditoMeret(); //adatbekérés hibás paraméter esetén -1 
+				seged = UditoMeret(); //adatbekérés hibás paraméter esetén -1 
 				if (seged != -1) { //ha helyes a bemeneti paraméter a méretre
 					ud.setAdag(seged); //adagbeállítása
 					szamla.add(ud);//számlához add
@@ -82,9 +88,10 @@ void Vezerlo::vasarlas(SajtBurger s, SimaBurger si, VegaBurger v, EgyediBurger E
 				cout << "Hibas bemenet";
 				getchar();
 			}
+			tortenteleutes = true;
 			break;
 		case 53: //krumpli
-			adag = Krumpli(); 
+			adag = Krumpli();
 			if (adag != -1) {
 				su.setAdag(adag);
 				szamla.add(su);
@@ -95,6 +102,7 @@ void Vezerlo::vasarlas(SajtBurger s, SimaBurger si, VegaBurger v, EgyediBurger E
 				cout << "Hibas bemenet";
 				getchar();
 			}
+			tortenteleutes = true;
 			break;
 		case 54: //menu
 		{
@@ -151,25 +159,29 @@ void Vezerlo::vasarlas(SajtBurger s, SimaBurger si, VegaBurger v, EgyediBurger E
 				me.menuHozzaAdd(si, a, s, b, v, c, su, ud);
 				szamla.add(me);
 			}
-		
+
 		}
+		tortenteleutes = true;
 		break;
 		case 55: //egyedi burger készítés
-			Egyedb= Egyedi( h1 ,Egyedb); //átadjuk a példányt és a visszatérési érték felülírja saját magát ez azért szükséges mivel minden esetben már lehet ezért nem tudjuk elérebeállítani a paramétereket ezért saját magár felül kell írnia mindig
+			Egyedb = Egyedi(h1, Egyedb); //átadjuk a példányt és a visszatérési érték felülírja saját magát ez azért szükséges mivel minden esetben már lehet ezért nem tudjuk elérebeállítani a paramétereket ezért saját magár felül kell írnia mindig
 			if (Egyedb.getAr() != 0) { //ha hibás a bemeneti adat a példánynak nem lesz értéke ezért nem adhatjuk hozzá a listához
 				szamla.add(Egyedb); //listához adás
 				Egyedb.urit();//lista ürítése ár változó beállítása ar=0;
-				
+
 			}
 			break;
+			tortenteleutes = true;
 		case 56: //kiir
 			system("cls");
 			szamla.Kiir();
 			getchar();
 			break;
 		case 48: //fizetés
-			szamla.SzamlaKeszites(ceg);
-			naplo.Naploeleres(vas,szamla);
+			if (tortenteleutes == true) { //történt e vásárlás ha nem ne állítson ki felesleges papírokat
+				szamla.SzamlaKeszites(ceg);
+				naplo.Naploeleres(vas, szamla);
+			}
 			exit = true;
 		case 27: //esc
 			exit = true;
@@ -178,6 +190,7 @@ void Vezerlo::vasarlas(SajtBurger s, SimaBurger si, VegaBurger v, EgyediBurger E
 			break;
 		}
 	} while (exit != true);
+	tortenteleutes = false;
 }
 
 int Vezerlo::Krumpli()
