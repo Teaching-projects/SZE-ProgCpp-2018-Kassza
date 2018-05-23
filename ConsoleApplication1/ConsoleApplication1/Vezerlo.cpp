@@ -164,6 +164,7 @@ void Vezerlo::vasarlas(SajtBurger s, SimaBurger si, VegaBurger v, EgyediBurger E
 		case 56: //kiir
 			system("cls");
 			szamla.Kiir();
+			szamla.SzamlaKeszites();
 			getchar();
 			break;
 		case 27: //esc

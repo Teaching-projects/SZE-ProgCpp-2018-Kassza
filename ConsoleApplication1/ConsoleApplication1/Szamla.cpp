@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "Szamla.h"
 #include <iostream>
+#include <ctime>
 
 
 Szamla::Szamla()
@@ -157,6 +158,14 @@ void Szamla::Kiir() {
 	ar = 0;
 }
 
+void Szamla::SzamlaKeszites() {
+	time_t     now = time(0);
+	struct tm  tstruct;
+	char       buf[80];
+	tstruct = *localtime(&now);
+	strftime(buf, sizeof(buf), "%Y-%m-%d_%X", &tstruct);
+	
+}
 Szamla::~Szamla()
 {
 }

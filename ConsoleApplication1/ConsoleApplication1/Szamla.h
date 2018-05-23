@@ -39,6 +39,7 @@ public:
 	void del(Menu s);
 	void del(EgyediBurger s);
 	void Kiir();
+	void SzamlaKeszites();
 	~Szamla();
 };
 #endif
