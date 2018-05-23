@@ -60,9 +60,27 @@ void Vezerlo::vasarlas(SajtBurger s, SimaBurger si, VegaBurger v, EgyediBurger E
 			szamla.add(v);
 			break;
 		case 52: //üdítõ
-			ud.setFajta(UditoFajta());
-			ud.setAdag(UditoMeret());
-			szamla.add(ud);
+			seged = UditoFajta();
+			if (seged != -1) {
+				ud.setFajta(seged);
+				seged= UditoMeret();
+				if (seged != -1) {
+					ud.setAdag(seged);
+					szamla.add(ud);
+				}
+				else
+				{
+					system("cls");
+					cout << "Hibas bemenet";
+					getchar();
+				}
+			}
+			else
+			{
+				system("cls");
+				cout << "Hibas bemenet";
+				getchar();
+			}
 			break;
 		case 53: //krumpli
 			adag = Krumpli();
