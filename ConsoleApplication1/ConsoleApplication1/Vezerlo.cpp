@@ -38,6 +38,7 @@ void Vezerlo::UjvasarlasKiiras()
 	cout << "6.Menü" << endl;
 	cout << "7.Speciális" << endl;
 	cout << "8.Kiír" << endl;
+	cout << "0.Vásárlás vége";
 }
 
 void Vezerlo::vasarlas(SajtBurger s, SimaBurger si, VegaBurger v, EgyediBurger Egyedb,  SultKrumpli su, Udito ud, Menu me, Szamla szamla, Hozzavalok h1,Ceg ceg)
@@ -164,9 +165,11 @@ void Vezerlo::vasarlas(SajtBurger s, SimaBurger si, VegaBurger v, EgyediBurger E
 		case 56: //kiir
 			system("cls");
 			szamla.Kiir();
-			szamla.SzamlaKeszites(ceg);
 			getchar();
 			break;
+		case 48:
+			szamla.SzamlaKeszites(ceg);
+			exit = true;
 		case 27: //esc
 			exit = true;
 			break;
