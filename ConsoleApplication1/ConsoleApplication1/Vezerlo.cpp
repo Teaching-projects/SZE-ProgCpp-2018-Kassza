@@ -14,7 +14,7 @@
 #include "Menu.h"
 #include "Szamla.h"
 #include "Vezerlo.h"
-
+#include "Vasarlo.h"
 using namespace std;
 Vezerlo::Vezerlo()
 {
@@ -41,7 +41,7 @@ void Vezerlo::UjvasarlasKiiras()
 	cout << "0.Vásárlás vége";
 }
 
-void Vezerlo::vasarlas(SajtBurger s, SimaBurger si, VegaBurger v, EgyediBurger Egyedb,  SultKrumpli su, Udito ud, Menu me, Szamla szamla, Hozzavalok h1,Ceg ceg,Naplo naplo)
+void Vezerlo::vasarlas(SajtBurger s, SimaBurger si, VegaBurger v, EgyediBurger Egyedb,  SultKrumpli su, Udito ud, Menu me, Szamla szamla, Hozzavalok h1,Ceg ceg,Naplo naplo,Vasarlo vas)
 {
 	bool exit = false;
 	int adag = 0; //adatbekéréshez segéd
@@ -169,7 +169,7 @@ void Vezerlo::vasarlas(SajtBurger s, SimaBurger si, VegaBurger v, EgyediBurger E
 			break;
 		case 48: //fizetés
 			szamla.SzamlaKeszites(ceg);
-			naplo.
+			naplo.Naploeleres(vas,szamla);
 			exit = true;
 		case 27: //esc
 			exit = true;

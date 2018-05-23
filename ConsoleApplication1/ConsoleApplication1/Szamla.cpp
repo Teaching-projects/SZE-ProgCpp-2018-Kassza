@@ -256,6 +256,11 @@ void Szamla::SzamlaKeszites(Ceg ceg) {
 }
 
 
+int Szamla::getAr()
+{
+	return this->ar;
+}
+
 Szamla::~Szamla()
 {
 }

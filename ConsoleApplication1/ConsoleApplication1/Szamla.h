@@ -44,6 +44,7 @@ public:
 	void Kiir();
 	void SzamlaKeszites(Ceg c);
 	void Kiira(ofstream a);
+	int getAr();
 	~Szamla();
 };
 #endif
