@@ -10,7 +10,7 @@ Vasarlo::Vasarlo()
 
 int Vasarlo::randomgen()
 {
-	return rand() % 1;
+	return rand() % 100;
 
 }
 
@@ -22,7 +22,7 @@ string Vasarlo::randomgenString()
 	{
 		osszefuzz = osszefuzz + to_string(randomgen());
 	}
-	return string();
+	return osszefuzz;
 }
 
 Vasarlo::~Vasarlo()

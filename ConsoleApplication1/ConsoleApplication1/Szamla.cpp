@@ -162,6 +162,7 @@ void Szamla::Kiir() {
 }
 
 void Szamla::SzamlaKeszites(Ceg ceg) {
+	ar = 0;
 	string datum;
 	time_t     now = time(0);
 	struct tm  tstruct;
@@ -251,7 +252,6 @@ void Szamla::SzamlaKeszites(Ceg ceg) {
 	fout <<'\n'<< "		" << ar << '\n';
 	fout << "Köszönjük a vásárlást";
 	fout << '\n' << '\n' << datum;
-	ar = 0;
 	fout.close();
 }
 

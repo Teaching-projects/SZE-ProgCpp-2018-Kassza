@@ -23,9 +23,15 @@ void Naplo::NaplobaIras(Vasarlo v,Szamla sz)
 	strftime(buf, sizeof(buf), "%Y-%m-%d_%X", &tstruct);
 	datum = string(buf);
 
-	if (v.randomgen() == 0) {
-		fout << datum << "	" << "Kézpénzes vásárlás" << sz.getAr()<<endl;
+	if (v.randomgen() %2== 0) {
+		fout << datum << "	" << "Kézpénzes vásárlás" <<"	"<< sz.getAr()<<endl;
 	}
+	else
+	{
+		string kartyaszam = v.randomgenString();
+		fout << datum << "	" << "Bankártyás vásárlás"<<"	" <<kartyaszam<<"	" << sz.getAr() << endl;
+	}
+
 	fout.close();
 }
 
