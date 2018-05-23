@@ -167,8 +167,9 @@ void Vezerlo::vasarlas(SajtBurger s, SimaBurger si, VegaBurger v, EgyediBurger E
 			szamla.Kiir();
 			getchar();
 			break;
-		case 48:
+		case 48: //fizetés
 			szamla.SzamlaKeszites(ceg);
+
 			exit = true;
 		case 27: //esc
 			exit = true;

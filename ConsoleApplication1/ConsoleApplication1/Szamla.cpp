@@ -171,7 +171,7 @@ void Szamla::SzamlaKeszites(Ceg ceg) {
 	datum = string(buf);
 
 	ofstream fout;
-	fout.open("p.txt"); // stringet nem tud kezelni a fordító 
+	fout.open("nyugta.txt"); // stringet nem tud kezelni a fordító 
 	fout << ceg.getNev()<<'\n'<<ceg.getAdoszam()<<'\n'<<'\n';
 	if (SaB.size() != 0) {
 		for (SajtBurger n : SaB) {

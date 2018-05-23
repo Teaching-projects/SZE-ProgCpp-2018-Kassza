@@ -152,6 +152,7 @@
     <ClInclude Include="Hamburger.h" />
     <ClInclude Include="Hozzavalok.h" />
     <ClInclude Include="Menu.h" />
+    <ClInclude Include="Naplo.h" />
     <ClInclude Include="Sajtburger.h" />
     <ClInclude Include="SimaBurger.h" />
     <ClInclude Include="stdafx.h" />
@@ -170,6 +171,7 @@
     <ClCompile Include="Hamburger.cpp" />
     <ClCompile Include="Hozzavalok.cpp" />
     <ClCompile Include="Menu.cpp" />
+    <ClCompile Include="Naplo.cpp" />
     <ClCompile Include="Sajtburger.cpp" />
     <ClCompile Include="SimaBurger.cpp" />
     <ClCompile Include="stdafx.cpp">
