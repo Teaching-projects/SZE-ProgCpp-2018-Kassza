@@ -17,6 +17,7 @@ public:
 	void Kiir();
 	int getAr();
 	void KiirNev();
+	string getNev();
 	~VegaBurger();
 };
 #endif

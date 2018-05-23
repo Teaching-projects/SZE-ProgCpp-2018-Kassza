@@ -19,6 +19,7 @@ public:
 	int getAr();
 	void KiirNev();
 	void Kiir();
+	list<string> alapanyagokvisszaadd();
 	void setAr(int ar);
 	void urit();
 };

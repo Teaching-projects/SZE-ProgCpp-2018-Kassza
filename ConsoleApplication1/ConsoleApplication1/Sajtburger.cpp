@@ -88,6 +88,11 @@ void SajtBurger::KiirNev() {
 	cout << this->nev;
 }
 
+
+string SajtBurger::getNev() {
+	return this->nev;
+}
+
 SajtBurger::~SajtBurger()
 {
 }

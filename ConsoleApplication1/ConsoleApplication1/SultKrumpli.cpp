@@ -1,10 +1,12 @@
 #include "stdafx.h"
 #include "SultKrumpli.h"
 #include <iostream>
-
+#include <string>
 using namespace std;
 SultKrumpli::SultKrumpli()
 {
+	Ar = 300;
+	Adag = 0;
 }
 
 void SultKrumpli::setSultKrumpli(int meret)
@@ -29,6 +31,12 @@ int SultKrumpli::getAr() {
 int SultKrumpli::getAdag() {
 	return Adag;
 }
+
+string SultKrumpli::getNev()
+{
+	return Nev;
+}
+
 
 void SultKrumpli::setAdag(int meret) {
 	Adag = meret;

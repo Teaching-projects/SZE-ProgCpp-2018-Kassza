@@ -15,6 +15,7 @@ private:
 public:
 	SajtBurger();
 	SajtBurger(Hozzavalok e);
+	string getNev();
 	~SajtBurger();
 	void HozzaAddAlapAnyagot(Hozzavalok e, int hozzaad);
 	void ElveszAlapAnyagot(Hozzavalok e, int elvesz);

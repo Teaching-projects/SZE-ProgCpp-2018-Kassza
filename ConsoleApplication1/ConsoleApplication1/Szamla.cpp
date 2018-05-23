@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "Szamla.h"
 #include <iostream>
+#include <fstream>
 #include <ctime>
 
 
@@ -159,13 +160,102 @@ void Szamla::Kiir() {
 }
 
 void Szamla::SzamlaKeszites() {
+	string datum;
 	time_t     now = time(0);
 	struct tm  tstruct;
 	char       buf[80];
 	tstruct = *localtime(&now);
 	strftime(buf, sizeof(buf), "%Y-%m-%d_%X", &tstruct);
-	
+	datum = string(buf);
+	datum = datum + ".txt";
+
+	ofstream fout;
+	fout.open("p.txt"); // stringet nem tud kezelni a fordító 
+	if (SaB.size() != 0) {
+		for (SajtBurger n : SaB) {
+			fout << n.getNev();
+			fout << "	";
+			fout << n.getAr();
+			fout << endl;
+			ar = ar + n.getAr();
+			fout << "-----------------------------------------------------------" << endl;
+		}
+	}
+
+	if (SiB.size() != 0) {
+		for (SimaBurger n : SiB) {
+			fout << n.getNev();
+			fout << "	";
+			fout << n.getAr();
+			fout << endl;
+			ar = ar + n.getAr();
+			fout << "-----------------------------------------------------------" << endl;
+		}
+	}
+
+	if (VaB.size() != 0) {
+		for (VegaBurger n : VaB) {
+			fout << n.getNev();
+			fout << "	";
+			fout << n.getAr();
+			fout << endl;
+			ar = ar + n.getAr();
+			fout << "-----------------------------------------------------------" << endl;
+		}
+	}
+
+	if (Kru.size() != 0) {
+		for (SultKrumpli n : Kru) {
+			fout << n.getNev()<<"	"<<n.getAdag();
+			fout << "	";
+			fout << n.getAr() << endl;
+			ar = ar + n.getAr();
+			fout << "-----------------------------------------------------------" << endl;
+		}
+	}
+
+	if (Ud.size() != 0) {
+		for (Udito n : Ud) {
+			fout<<n.getNev()<<"	"<< n.getAdag();
+			fout << "	";
+			fout << n.getAr() << endl;
+			ar = ar + n.getAr();
+			fout << "-----------------------------------------------------------" << endl;
+		}
+	}
+
+
+	if (EgB.size() != 0) {
+		list <string> alap;
+		string a;
+		for (EgyediBurger n : EgB) {
+			alap = n.alapanyagokvisszaadd();
+			for (std::list<string>::iterator it = alap.begin(); it != alap.end(); ++it)
+				fout << *it<<endl;
+			fout << "		";
+			fout << n.getAr() << endl;
+			ar = ar + n.getAr();
+			fout << "-----------------------------------------------------------" << endl;
+		}
+	}
+
+	if (Men.size() != 0) {
+		int melyik = 0;
+		for (Menu n : Men) {
+			n.Kiir(melyik);
+			fout << "		";
+			fout << n.getAr(melyik) << endl;
+			ar = ar + n.getAr(melyik);
+			fout << "-----------------------------------------------------------" << endl;
+			melyik++;
+		}
+	}
+	fout << "		" << ar << endl;;
+	ar = 0;
+	fout.close();
 }
+
+
 Szamla::~Szamla()
 {
 }

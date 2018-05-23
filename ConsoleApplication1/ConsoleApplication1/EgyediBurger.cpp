@@ -2,6 +2,7 @@
 #include "EgyediBurger.h"
 #include <iostream>
 #include <conio.h>
+#include <list>
 
 #include "Hozzavalok.h"
 #include "Hamburger.h" // absztrakt
@@ -14,6 +15,7 @@ EgyediBurger::EgyediBurger()
 {
 	ar = 0;
 	nev = "Speciális";
+	alapanyag.clear();
 }
 
 
@@ -83,6 +85,10 @@ void EgyediBurger::Kiir() {
 	for (string n : alapanyag) {
 		std::cout << n << '\n';
 	}
+}
+
+list <string>EgyediBurger::alapanyagokvisszaadd() {
+	return alapanyag;
 }
 
 void EgyediBurger::setAr(int ar) {

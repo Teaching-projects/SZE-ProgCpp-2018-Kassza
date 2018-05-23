@@ -1,16 +1,2 @@
-﻿  stdafx.cpp
-  Vezerlo.cpp
-  VegaBurger.cpp
-  Udito.cpp
-  Szamla.cpp
-  SultKrumpli.cpp
-  SimaBurger.cpp
-  Sajtburger.cpp
-  Menu.cpp
-c:\users\befor\desktop\kassza\sze-progcpp-2018-kassza\consoleapplication1\consoleapplication1\menu.cpp(77): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-  Hozzavalok.cpp
-  Hamburger.cpp
-  EgyediBurger.cpp
-  ConsoleApplication1.cpp
-  Generating Code...
+﻿  Szamla.cpp
   ConsoleApplication1.vcxproj -> C:\Users\Befor\Desktop\kassza\SZE-ProgCpp-2018-Kassza\ConsoleApplication1\Debug\ConsoleApplication1.exe

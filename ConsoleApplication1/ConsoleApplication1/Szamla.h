@@ -9,6 +9,7 @@
 #include "EgyediBurger.h"
 #include "Menu.h"
 #include <list>
+#include <iostream>
 
 class Szamla
 {
@@ -40,6 +41,7 @@ public:
 	void del(EgyediBurger s);
 	void Kiir();
 	void SzamlaKeszites();
+	void Kiira(ofstream a);
 	~Szamla();
 };
 #endif

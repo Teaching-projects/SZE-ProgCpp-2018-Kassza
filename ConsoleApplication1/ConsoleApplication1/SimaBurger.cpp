@@ -84,6 +84,10 @@ int SimaBurger::getAr() {
 void SimaBurger::KiirNev() {
 	cout << this->nev;
 }
+
+string SimaBurger::getNev() {
+	return this->nev;
+}
 SimaBurger::~SimaBurger()
 {
 }

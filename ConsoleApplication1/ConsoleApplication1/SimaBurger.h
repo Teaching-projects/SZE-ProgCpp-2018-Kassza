@@ -21,6 +21,7 @@ public:
 	int getAr();
 	void Kiir();
 	void KiirNev();
+	string getNev();
 	~SimaBurger();
 };
 #endif

@@ -2,6 +2,7 @@
 #include "VegaBurger.h"
 #include <iostream>
 #include<list>
+#include <string.h>
 
 
 VegaBurger::VegaBurger()
@@ -81,6 +82,10 @@ int VegaBurger::getAr() {
 
 void VegaBurger::KiirNev() {
 	cout << this->nev;
+}
+
+string VegaBurger::getNev() {
+	return this->nev;
 }
 
 VegaBurger::~VegaBurger()
