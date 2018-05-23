@@ -43,39 +43,39 @@ void Vezerlo::UjvasarlasKiiras()
 void Vezerlo::vasarlas(SajtBurger s, SimaBurger si, VegaBurger v, EgyediBurger Egyedb,  SultKrumpli su, Udito ud, Menu me, Szamla szamla, Hozzavalok h1)
 {
 	bool exit = false;
-	int adag = 0;
-	int seged = 0;
+	int adag = 0; //adatbekéréshez segéd
+	int seged = 0;//adatbekéréshez segéd
 	do
 	{
-		UjvasarlasKiiras();
-		switch (_getch())
+		UjvasarlasKiiras(); //vásárlási lehetõségek kiegészítése
+		switch (_getch()) //egy karakterbekérése
 		{
 		case 49: //sajtburger
-			szamla.add(s);
+			szamla.add(s);//számlához add 
 			break;
 		case 50: //sima
-			szamla.add(si);
+			szamla.add(si);//számlához add 
 			break;
 		case 51: //vega
-			szamla.add(v);
+			szamla.add(v);//számlához add 
 			break;
 		case 52: //üdítõ
-			seged = UditoFajta();
-			if (seged != -1) {
-				ud.setFajta(seged);
-				seged= UditoMeret();
-				if (seged != -1) {
-					ud.setAdag(seged);
-					szamla.add(ud);
+			seged = UditoFajta(); //adatbekérés hibás paraméter esetén -1 a visszatérési érték
+			if (seged != -1) { //ha jó az adatbemente
+				ud.setFajta(seged); //üdítõ fajtájának beállítása
+				seged= UditoMeret(); //adatbekérés hibás paraméter esetén -1 
+				if (seged != -1) { //ha helyes a bemeneti paraméter a méretre
+					ud.setAdag(seged); //adagbeállítása
+					szamla.add(ud);//számlához add
 				}
-				else
+				else //hibás paraméter esetén (üdítõ méret)
 				{
 					system("cls");
 					cout << "Hibas bemenet";
 					getchar();
 				}
 			}
-			else
+			else//hubás paraméter esetén üdítõ fajta)
 			{
 				system("cls");
 				cout << "Hibas bemenet";
@@ -83,7 +83,7 @@ void Vezerlo::vasarlas(SajtBurger s, SimaBurger si, VegaBurger v, EgyediBurger E
 			}
 			break;
 		case 53: //krumpli
-			adag = Krumpli();
+			adag = Krumpli(); 
 			if (adag != -1) {
 				su.setAdag(adag);
 				szamla.add(su);
@@ -97,34 +97,33 @@ void Vezerlo::vasarlas(SajtBurger s, SimaBurger si, VegaBurger v, EgyediBurger E
 			break;
 		case 54: //menu
 		{
-			int a, b, c;
+			int a, b, c; //segéd változók a menü választáshoz
 			a = b = c = 0;
 			bool OK = true;
-			seged = hamburger();
+			seged = hamburger(); //hamburger választása -1 az érték ha rossz a bemeneti adat
 			if (seged == -1) {
 				OK = false;
 				system("cls");
 				cout << "Hibas bemenet";
 				getchar();
 			}
-			else if (seged == 1)
+			else if (seged == 1) //ha sajtburgert választottak
 			{
-				b = 1;
+				b = 1; //sajtburger 1 a többit 0 a=0,b=1,c=0 
 			}
-			else if (seged == 2)
+			else if (seged == 2) //simaburger esetén
 			{
 				a = 1;
 			}
-			else if (seged == 3)
+			else if (seged == 3) //vegaburgeresetén
 			{
 				c = 1;
 			}
 
-			if (OK == true) {
+			if (OK == true) { //ha az eddigi adatbemenetek helyesek voltak kiválaszthajuk a krumplit
 				adag = Krumpli();
 				if (adag != -1) {
 					su.setAdag(adag);
-
 				}
 				else
 				{
@@ -134,7 +133,7 @@ void Vezerlo::vasarlas(SajtBurger s, SimaBurger si, VegaBurger v, EgyediBurger E
 					getchar();
 				}
 			}
-			if (OK == true) {
+			if (OK == true) { //ha az eddigi adatbemenetek helyesek voltak kiválaszthajuk az üdítõt 
 				int seged = UditoFajta();
 				if (seged != -1) {
 					ud.setFajta(seged);
@@ -146,7 +145,8 @@ void Vezerlo::vasarlas(SajtBurger s, SimaBurger si, VegaBurger v, EgyediBurger E
 
 				}
 			}
-			if (OK == true) {
+
+			if (OK == true) {// ha minden paraméter helyes volt akkor beállíthatjuk a példány paramétereit és hozzáadjuk a listához
 				me.menuHozzaAdd(si, a, s, b, v, c, su, ud);
 				szamla.add(me);
 			}
@@ -154,11 +154,11 @@ void Vezerlo::vasarlas(SajtBurger s, SimaBurger si, VegaBurger v, EgyediBurger E
 		}
 		break;
 		case 55: //egyedi burger készítés
-			Egyedb= Egyedi( h1 ,Egyedb);
-			if (Egyedb.getAr() != 0) {
-				szamla.add(Egyedb);
-				Egyedb.urit();
-				Egyedb.setAr(Egyedb.getAr()*-1);
+			Egyedb= Egyedi( h1 ,Egyedb); //átadjuk a példányt és a visszatérési érték felülírja saját magát ez azért szükséges mivel minden esetben már lehet ezért nem tudjuk elérebeállítani a paramétereket ezért saját magár felül kell írnia mindig
+			if (Egyedb.getAr() != 0) { //ha hibás a bemeneti adat a példánynak nem lesz értéke ezért nem adhatjuk hozzá a listához
+				szamla.add(Egyedb); //listához adás
+				Egyedb.urit();//lista ürítése
+				Egyedb.setAr(Egyedb.getAr()*-1); //ár 0 ra vissza állítása nem szép de így egyel kevesebb method lett
 				
 			}
 			break;
