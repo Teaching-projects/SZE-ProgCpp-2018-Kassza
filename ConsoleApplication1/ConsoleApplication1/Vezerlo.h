@@ -21,7 +21,7 @@
 class Vezerlo
 {
 private:
-	bool tortenteleutes;
+	bool tortenteleutes; //történt e leütés 
 public:
 	Vezerlo();
 	void MenuKiiras();

@@ -163,8 +163,8 @@ void Szamla::Kiir() {
 }
 
 void Szamla::SzamlaKeszites(Ceg ceg) {
-	ar = 0;
-	string datum;
+	ar = 0; //ár nullázása azért az elején hogy késõbb feltudjuk használni a naplózáskor
+	string datum; //dátum kezelés
 	time_t     now = time(0);
 	struct tm  tstruct;
 	char       buf[80];
@@ -174,7 +174,9 @@ void Szamla::SzamlaKeszites(Ceg ceg) {
 
 	ofstream fout;
 	fout.open("nyugta.txt"); // stringet nem tud kezelni a fordító 
+	//huzzá adja a nyugtához szükséges adatokat (cég név , adószám, sajtb,simab,vegab,krum, üdítõ, menü, ár,szöveg ,datum)
 	fout << ceg.getNev()<<'\n'<<ceg.getAdoszam()<<'\n'<<'\n';
+	//számla által hazsnált listákon fut végig és írja ki soronként az adatokat
 	if (SaB.size() != 0) {
 		for (SajtBurger n : SaB) {
 			fout << n.getNev();
@@ -223,7 +225,7 @@ void Szamla::SzamlaKeszites(Ceg ceg) {
 		}
 	}
 
-
+	//speciális mivel az egyedi burger is egy osztályból áll és az annak az osztály elemeit kell visszaadnunk amit az adott listába belepakoltunk
 	if (EgB.size() != 0) {
 		list <string> alap;
 		string a;
@@ -237,6 +239,7 @@ void Szamla::SzamlaKeszites(Ceg ceg) {
 		}
 	}
 
+	//menu osztály végzi a fájl kiírást mivel egy menühöz nem csak egy burger tartozik hanem krumpli és ital ezáltal így könnyebb és gyorsabb a kiíratás
 	if (Men.size() != 0) {
 		string menu;
 		int melyik = 0;

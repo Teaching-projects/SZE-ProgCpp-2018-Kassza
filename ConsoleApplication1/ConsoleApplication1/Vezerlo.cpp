@@ -44,7 +44,7 @@ void Vezerlo::UjvasarlasKiiras()
 	cout << "0.Vásárlás vége";
 }
 
-void Vezerlo::vasarlas(SajtBurger s, SimaBurger si, VegaBurger v, EgyediBurger Egyedb,  SultKrumpli su, Udito ud, Menu me, Szamla szamla, Hozzavalok h1,Ceg ceg,Naplo naplo,Vasarlo vas)
+void Vezerlo::vasarlas(SajtBurger s, SimaBurger si, VegaBurger v, EgyediBurger Egyedb, SultKrumpli su, Udito ud, Menu me, Szamla szamla, Hozzavalok h1, Ceg ceg, Naplo naplo, Vasarlo vas)
 {
 	bool exit = false;
 	int adag = 0; //adatbekéréshez segéd
@@ -82,7 +82,7 @@ void Vezerlo::vasarlas(SajtBurger s, SimaBurger si, VegaBurger v, EgyediBurger E
 					getchar();
 				}
 			}
-			else//hubás paraméter esetén üdítõ fajta)
+			else//hibás paraméter esetén üdítõ (fajta)
 			{
 				system("cls");
 				cout << "Hibas bemenet";
@@ -150,8 +150,6 @@ void Vezerlo::vasarlas(SajtBurger s, SimaBurger si, VegaBurger v, EgyediBurger E
 				seged = UditoMeret();
 				if (seged != -1) {
 					ud.setAdag(seged);
-
-
 				}
 			}
 
@@ -174,13 +172,13 @@ void Vezerlo::vasarlas(SajtBurger s, SimaBurger si, VegaBurger v, EgyediBurger E
 			tortenteleutes = true;
 		case 56: //kiir
 			system("cls");
-			szamla.Kiir();
+			szamla.Kiir(); //kiírja az aktuális számlán lévõ termékeket
 			getchar();
 			break;
-		case 48: //fizetés
+		case 48: //Fizetés
 			if (tortenteleutes == true) { //történt e vásárlás ha nem ne állítson ki felesleges papírokat
-				szamla.SzamlaKeszites(ceg);
-				naplo.Naploeleres(vas, szamla);
+				szamla.SzamlaKeszites(ceg); //nyugta készítés 
+				naplo.Naploeleres(vas, szamla);//naplóba írás
 			}
 			exit = true;
 		case 27: //esc
