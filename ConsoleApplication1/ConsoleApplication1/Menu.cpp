@@ -7,6 +7,7 @@
 #include "Udito.h"
 #include <iostream>
 #include <stdlib.h>
+#include <fstream>
 
 
 using namespace std;
@@ -112,6 +113,47 @@ void Menu::Kiir(int i){
 		}
 	}
 }
+
+string Menu::Kiirf(int i) {
+	string menu="";
+	if (sajtburger.size() != 0) {
+		if (melyik[i] == 2) {
+			menu = menu+sajtburger[i].getNev();
+			menu = menu + '\n';
+			menu = menu+krupli[i].visszaMeret();
+			menu = menu + '\n';
+			menu = menu + udito[i].getNev();
+			menu = menu + '\n';
+			return menu;
+		}
+	}
+
+	if (vegaburger.size() != 0) {
+		if (melyik[i] == 3) {
+			menu = menu + vegaburger[i].getNev();
+			menu = menu + '\n';
+			menu = menu + krupli[i].visszaMeret() + "	" + krupli[i].getNev();
+			menu = menu + '\n';
+			menu = menu + udito[i].getNev();
+			menu = menu + '\n';
+			return menu;
+		}
+	}
+
+	if (simaburger.size() != 0) {
+		if (melyik[i] == 1) {
+			menu = menu + simaburger[i].getNev();
+			menu = menu + '\n';
+			menu = menu + krupli[i].visszaMeret() + "	" + krupli[i].getNev();
+			menu = menu + '\n';
+			menu = menu + udito[i].getNev();
+			menu = menu + '\n';
+			return menu;
+		}
+	}
+}
+
+
 
 Menu::~Menu()
 {

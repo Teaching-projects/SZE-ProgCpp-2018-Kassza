@@ -30,6 +30,8 @@ public:
 	void setKedvezmeny(double kedv);
 	double getKedvezmeny();
 	void Kiir(int hanyadik);
+	string Kiirf(int i);
+
 	~Menu();
 };
 #endif

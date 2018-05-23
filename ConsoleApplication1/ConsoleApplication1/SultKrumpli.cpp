@@ -7,6 +7,7 @@ SultKrumpli::SultKrumpli()
 {
 	Ar = 300;
 	Adag = 0;
+	Nev = "SültKrumpli";
 }
 
 void SultKrumpli::setSultKrumpli(int meret)
@@ -51,6 +52,16 @@ void SultKrumpli::Kiir()
 		cout << "közepes kruppli";
 	else if (Adag == 3)
 		cout << "nagy kruppli";
+}
+
+string SultKrumpli::visszaMeret()
+{
+	if (Adag == 1)
+		return  "kis kruppli";
+	else if (Adag == 2)
+		return "közepes kruppli";
+	else if (Adag == 3)
+		return "nagy kruppli";
 }
 
 void SultKrumpli::ujAr() {

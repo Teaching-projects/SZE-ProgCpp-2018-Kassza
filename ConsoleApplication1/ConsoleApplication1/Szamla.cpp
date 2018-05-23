@@ -4,7 +4,7 @@
 #include <fstream>
 #include <ctime>
 
-
+using namespace std;
 Szamla::Szamla()
 {
 }
@@ -240,9 +240,12 @@ void Szamla::SzamlaKeszites() {
 	}
 
 	if (Men.size() != 0) {
+		string menu;
 		int melyik = 0;
 		for (Menu n : Men) {
-			n.Kiir(melyik);
+			menu= n.Kiirf(melyik);
+			fout << menu;
+			menu.clear();
 			fout << "		";
 			fout << n.getAr(melyik) << endl;
 			ar = ar + n.getAr(melyik);

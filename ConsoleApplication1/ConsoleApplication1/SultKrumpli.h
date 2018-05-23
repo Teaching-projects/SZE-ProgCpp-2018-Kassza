@@ -19,6 +19,7 @@ public:
 	string getNev();
 	void setAdag(int meret);
 	void Kiir();
+	string visszaMeret();
 	~SultKrumpli();
 };
 #endif
