@@ -39,6 +39,7 @@ public:
 	void del(SultKrumpli s);
 	void del(Menu s);
 	void del(EgyediBurger s);
+
 	void Kiir();
 	void SzamlaKeszites();
 	void Kiira(ofstream a);

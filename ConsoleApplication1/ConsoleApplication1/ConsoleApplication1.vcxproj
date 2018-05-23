@@ -147,6 +147,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Ceg.h" />
     <ClInclude Include="EgyediBurger.h" />
     <ClInclude Include="Hamburger.h" />
     <ClInclude Include="Hozzavalok.h" />
@@ -162,6 +163,7 @@
     <ClInclude Include="Vezerlo.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Ceg.cpp" />
     <ClCompile Include="ConsoleApplication1.cpp" />
     <ClCompile Include="EgyediBurger.cpp" />
     <ClCompile Include="Hamburger.cpp" />
