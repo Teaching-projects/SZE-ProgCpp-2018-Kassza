@@ -15,6 +15,7 @@
 #include "Szamla.h"
 #include "Vezerlo.h"
 #include "Ceg.h"
+#include "Naplo.h"
 
 class Vezerlo
 {
@@ -22,7 +23,7 @@ public:
 	Vezerlo();
 	void MenuKiiras();
 	void UjvasarlasKiiras();
-	void vasarlas(SajtBurger s, SimaBurger si, VegaBurger v, EgyediBurger Egyedb, SultKrumpli su, Udito ud, Menu me, Szamla szamla,Hozzavalok h1,Ceg c);
+	void vasarlas(SajtBurger s, SimaBurger si, VegaBurger v, EgyediBurger Egyedb, SultKrumpli su, Udito ud, Menu me, Szamla szamla,Hozzavalok h1,Ceg c,Naplo naplo);
 	int Krumpli();
 	int hamburger();
 	int UditoMeret();
