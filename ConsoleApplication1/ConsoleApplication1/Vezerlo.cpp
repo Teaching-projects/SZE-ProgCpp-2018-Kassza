@@ -173,7 +173,7 @@ void Vezerlo::vasarlas(SajtBurger s, SimaBurger si, VegaBurger v, EgyediBurger E
 		case 56: //kiir
 			system("cls");
 			szamla.Kiir(); //kiírja az aktuális számlán lévõ termékeket
-			getchar();
+			_getch();
 			break;
 		case 48: //Fizetés
 			if (tortenteleutes == true) { //történt e vásárlás ha nem ne állítson ki felesleges papírokat
