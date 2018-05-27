@@ -26,12 +26,12 @@ public:
 	Vezerlo();
 	void MenuKiiras();
 	void UjvasarlasKiiras();
-	void vasarlas(SajtBurger s, SimaBurger si, VegaBurger v, EgyediBurger Egyedb, SultKrumpli su, Udito ud, Menu me, Szamla szamla,Hozzavalok h1,Ceg c,Naplo naplo,Vasarlo va);
+	void vasarlas(SajtBurger s, SimaBurger si, VegaBurger v, EgyediBurger Egyedb, SultKrumpli su, Udito ud, Menu me, Szamla szamla,Ceg c,Naplo naplo,Vasarlo va);
 	int Krumpli();
 	int hamburger();
 	int UditoMeret();
 	int UditoFajta();
-	EgyediBurger Egyedi(Hozzavalok hozzavalo, EgyediBurger Egyedb);
+	EgyediBurger Egyedi(EgyediBurger Egyedb);
 	~Vezerlo();
 };
 

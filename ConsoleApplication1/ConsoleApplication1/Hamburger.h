@@ -10,8 +10,6 @@ protected:
 	int Ar = 0;
 public:
 	Hamburger();
-	virtual void HozzaAddAlapAnyagot(Hozzavalok e, int MitadunkHozza) = 0;
-	virtual void ElveszAlapAnyagot(Hozzavalok e, int MitveszunkEl) = 0;
 	virtual void Kiir() = 0;
 	~Hamburger();
 };

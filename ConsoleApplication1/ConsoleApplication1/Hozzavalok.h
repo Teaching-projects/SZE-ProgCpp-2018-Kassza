@@ -4,51 +4,29 @@
 #include <string>
 
 using namespace std;
-
-
-
 class Hozzavalok
-{
-private:
-	string pogacsa;
-	string hus;
-	string sajt;
-	string salata;
-	string tofu;
-	string uborka;
-	string ketchup;
-	string mustar;
-	int pogacsaar;
-	int husar;
-	int sajtar;
-	int tofuar;
-	int uborkaar;
-	int ketchupar;
-	int mustarar;
-	int salataar;
-
+{	
 public:
+	static string pogacsa;
+	static string hus;
+	static string sajt;
+	static string salata;
+	static string tofu;
+	static string uborka;
+	static string ketchup;
+	static string mustar;
+	static int pogacsaar;
+	static int husar;
+	static int sajtar;
+	static int tofuar;
+	static int uborkaar;
+	static int ketchupar;
+	static int mustarar;
+	static int salataar;
+
 	Hozzavalok();
-	string getPogacsa();
-	string getHus();
-	string getSajt();
-	string getSalata();
-	string getTofu();
-	string getUborka();
-	string getKetchup();
-	string getMustar();
-	int getPogacsaAr();
-	int getHusAr();
-	int getSajtAr();
-	int getTofuAr();
-	int getUborkaAr();
-	int getKetchuoAr();
-	int getMustarAr();
-	int getSalataAr();
-	void kiirat();
-
-	void kiiratsorszammal();
-
+	void static kiirat();
+	void static kiiratsorszammal();
 	~Hozzavalok();
 };
 #endif 

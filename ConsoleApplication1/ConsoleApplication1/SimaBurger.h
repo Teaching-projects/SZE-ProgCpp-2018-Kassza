@@ -15,9 +15,6 @@ private:
 	int menu;
 public:
 	SimaBurger();
-	SimaBurger(Hozzavalok e);
-	void HozzaAddAlapAnyagot(Hozzavalok e, int hozzaad);
-	void ElveszAlapAnyagot(Hozzavalok e, int elvesz);
 	int getAr();
 	void Kiir();
 	void KiirNev();

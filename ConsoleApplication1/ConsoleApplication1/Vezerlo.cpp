@@ -2,6 +2,7 @@
 #include "Vezerlo.h"
 #include <iostream>
 #include <conio.h>
+#include <string>
 #include "Hozzavalok.h"
 
 #include "Hamburger.h" // absztrakt
@@ -44,7 +45,7 @@ void Vezerlo::UjvasarlasKiiras()
 	cout << "0.Vásárlás vége";
 }
 
-void Vezerlo::vasarlas(SajtBurger s, SimaBurger si, VegaBurger v, EgyediBurger Egyedb, SultKrumpli su, Udito ud, Menu me, Szamla szamla, Hozzavalok h1, Ceg ceg, Naplo naplo, Vasarlo vas)
+void Vezerlo::vasarlas(SajtBurger s, SimaBurger si, VegaBurger v, EgyediBurger Egyedb, SultKrumpli su, Udito ud, Menu me, Szamla szamla, Ceg ceg, Naplo naplo, Vasarlo vas)
 {
 	bool exit = false;
 	int adag = 0; //adatbekéréshez segéd
@@ -162,7 +163,7 @@ void Vezerlo::vasarlas(SajtBurger s, SimaBurger si, VegaBurger v, EgyediBurger E
 		tortenteleutes = true;
 		break;
 		case 55: //egyedi burger készítés
-			Egyedb = Egyedi(h1, Egyedb); //átadjuk a példányt és a visszatérési érték felülírja saját magát ez azért szükséges mivel minden esetben már lehet ezért nem tudjuk elérebeállítani a paramétereket ezért saját magár felül kell írnia mindig
+			Egyedb = Egyedi(Egyedb); //átadjuk a példányt és a visszatérési érték felülírja saját magát ez azért szükséges mivel minden esetben már lehet ezért nem tudjuk elérebeállítani a paramétereket ezért saját magár felül kell írnia mindig
 			if (Egyedb.getAr() != 0) { //ha hibás a bemeneti adat a példánynak nem lesz értéke ezért nem adhatjuk hozzá a listához
 				szamla.add(Egyedb); //listához adás
 				Egyedb.urit();//lista ürítése ár változó beállítása ar=0;
@@ -280,7 +281,7 @@ int Vezerlo::UditoFajta() {
 	}
 }
 
-EgyediBurger Vezerlo::Egyedi(Hozzavalok h1,EgyediBurger Egyedb)
+EgyediBurger Vezerlo::Egyedi(EgyediBurger Egyedb)
 {
 	bool kilep = false;
 	bool kilepbelso = false;
@@ -296,31 +297,31 @@ EgyediBurger Vezerlo::Egyedi(Hozzavalok h1,EgyediBurger Egyedb)
 				 kilep = false;
 				kilepbelso = false;
 				system("cls");
-				h1.kiiratsorszammal();
+				Hozzavalok::kiiratsorszammal();
 				switch (_getch()) {
 				case 49:
-					Egyedb.HozzaAddAlapAnyagot(h1, 1);
+					Egyedb.HozzaAddAlapAnyagot( 1);
 					break;
 				case 50:
-					Egyedb.HozzaAddAlapAnyagot(h1, 2);
+					Egyedb.HozzaAddAlapAnyagot( 2);
 					break;
 				case 51:
-					Egyedb.HozzaAddAlapAnyagot(h1, 3);
+					Egyedb.HozzaAddAlapAnyagot( 3);
 					break;
 				case 52:
-					Egyedb.HozzaAddAlapAnyagot(h1, 4);
+					Egyedb.HozzaAddAlapAnyagot( 4);
 					break;
 				case 53:
-					Egyedb.HozzaAddAlapAnyagot(h1, 5);
+					Egyedb.HozzaAddAlapAnyagot( 5);
 					break;
 				case 54:
-					Egyedb.HozzaAddAlapAnyagot(h1, 6);
+					Egyedb.HozzaAddAlapAnyagot( 6);
 					break;
 				case 55:
-					Egyedb.HozzaAddAlapAnyagot(h1, 7);
+					Egyedb.HozzaAddAlapAnyagot( 7);
 					break;
 				case 56:
-					Egyedb.HozzaAddAlapAnyagot(h1, 8);
+					Egyedb.HozzaAddAlapAnyagot( 8);
 					break;
 				case 27:
 					kilepbelso = true;
@@ -336,31 +337,31 @@ EgyediBurger Vezerlo::Egyedi(Hozzavalok h1,EgyediBurger Egyedb)
 			do
 			{
 				system("cls");
-				h1.kiiratsorszammal();
+				Hozzavalok::kiiratsorszammal();
 				switch (_getch()) {
 				case 49:
-					Egyedb.ElveszAlapAnyagot(h1, 1);
+					Egyedb.ElveszAlapAnyagot(1);
 					break;
 				case 50:
-					Egyedb.ElveszAlapAnyagot(h1, 2);
+					Egyedb.ElveszAlapAnyagot( 2);
 					break;
 				case 51:
-					Egyedb.ElveszAlapAnyagot(h1, 3);
+					Egyedb.ElveszAlapAnyagot( 3);
 					break;
 				case 52:
-					Egyedb.ElveszAlapAnyagot(h1, 4);
+					Egyedb.ElveszAlapAnyagot( 4);
 					break;
 				case 53:
-					Egyedb.ElveszAlapAnyagot(h1, 5);
+					Egyedb.ElveszAlapAnyagot( 5);
 					break;
 				case 54:
-					Egyedb.ElveszAlapAnyagot(h1, 6);
+					Egyedb.ElveszAlapAnyagot( 6);
 					break;
 				case 55:
-					Egyedb.ElveszAlapAnyagot(h1, 7);
+					Egyedb.ElveszAlapAnyagot( 7);
 					break;
 				case 56:
-					Egyedb.ElveszAlapAnyagot(h1, 8);
+					Egyedb.ElveszAlapAnyagot( 8);
 					break;
 				case 27:
 					kilepbelso = true;

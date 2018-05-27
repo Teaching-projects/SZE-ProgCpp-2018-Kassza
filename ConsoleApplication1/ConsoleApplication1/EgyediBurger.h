@@ -14,8 +14,8 @@ private:
 public:
 	EgyediBurger();
 	~EgyediBurger();
-	void HozzaAddAlapAnyagot(Hozzavalok e, int hozzaad);
-	void ElveszAlapAnyagot(Hozzavalok e, int elvesz);
+	void HozzaAddAlapAnyagot(int hozzaad);
+	void ElveszAlapAnyagot(int elvesz);
 	int getAr();
 	void KiirNev();
 	void Kiir();

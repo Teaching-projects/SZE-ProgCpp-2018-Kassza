@@ -2,6 +2,7 @@
 #include "Vasarlo.h"
 #include <cstdlib>
 #include <string>
+#include <string>
 
 
 Vasarlo::Vasarlo()

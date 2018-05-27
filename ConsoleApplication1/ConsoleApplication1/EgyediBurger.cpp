@@ -2,6 +2,7 @@
 #include "EgyediBurger.h"
 #include <iostream>
 #include <conio.h>
+#include <string>
 #include <list>
 
 #include "Hozzavalok.h"
@@ -23,58 +24,58 @@ EgyediBurger::~EgyediBurger()
 {
 }
 
-void EgyediBurger::HozzaAddAlapAnyagot(Hozzavalok e, int hozzaad) {
+void EgyediBurger::HozzaAddAlapAnyagot(int hozzaad) {
 	switch (hozzaad)
 	{
 	case 1:
-		alapanyag.push_back(e.getKetchup());
-		setAr(e.getKetchuoAr());
+		alapanyag.push_back(Hozzavalok::ketchup);
+		setAr(Hozzavalok::ketchupar);
 		break;
 	case 2:
-		alapanyag.push_back(e.getMustar());
-		setAr(e.getMustarAr());
+		alapanyag.push_back(Hozzavalok::mustar);
+		setAr(Hozzavalok::mustarar);
 		break;
 	case 3:
-		alapanyag.push_back(e.getSajt());
-		setAr(e.getSajtAr());
+		alapanyag.push_back(Hozzavalok::sajt);
+		setAr(Hozzavalok::sajtar);
 		break;
 	case 4:
-		alapanyag.push_back(e.getUborka());
-		setAr(e.getUborkaAr());
+		alapanyag.push_back(Hozzavalok::uborka);
+		setAr(Hozzavalok::uborkaar);
 		break;
 	case 5:
-		alapanyag.push_back(e.getSalata());
-		setAr(e.getSalataAr());
+		alapanyag.push_back(Hozzavalok::salata);
+		setAr(Hozzavalok::salataar);
 		break;
 	case 6:
-		alapanyag.push_back(e.getTofu());
-		setAr(e.getTofuAr());
+		alapanyag.push_back(Hozzavalok::tofu);
+		setAr(Hozzavalok::tofuar);
 		break;
 	default:
 		break;
 	}
 }
 
-void EgyediBurger::ElveszAlapAnyagot(Hozzavalok e, int hozzaad) {
+void EgyediBurger::ElveszAlapAnyagot(int hozzaad) {
 	switch (hozzaad)
 	{
 	case 1:
-		alapanyag.remove(e.getKetchup());
+		alapanyag.push_back(Hozzavalok::ketchup);
 		break;
 	case 2:
-		alapanyag.remove(e.getMustar());
+		alapanyag.push_back(Hozzavalok::mustar);
 		break;
 	case 3:
-		alapanyag.remove(e.getSajt());
+		alapanyag.push_back(Hozzavalok::sajt);
 		break;
 	case 4:
-		alapanyag.remove(e.getUborka());
+		alapanyag.push_back(Hozzavalok::uborka);
 		break;
 	case 5:
-		alapanyag.remove(e.getSalata());
+		alapanyag.push_back(Hozzavalok::salata);
 		break;
 	case 6:
-		alapanyag.remove(e.getTofu());
+		alapanyag.push_back(Hozzavalok::tofu);
 		break;
 	default:
 		break;

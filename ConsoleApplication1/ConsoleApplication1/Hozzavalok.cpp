@@ -2,105 +2,34 @@
 #include "Hozzavalok.h"
 #include <iostream>
 #include <string>
+
 using namespace std;
-Hozzavalok::Hozzavalok()
-{
-	pogacsa = "pogacsa";
-	hus = "hus";
-	sajt = "sajt";
-	salata = "salata";
-	tofu = "tofu";
-	uborka = "uborka";
-	ketchup = "ketchup";
-	mustar = "mustar";
-	 pogacsaar=50;
-	 husar=100;
-	 sajtar=60;
-	 tofuar=70;
-	 uborkaar=20;
-	 ketchupar=30;
-	 mustarar=35;
-	 salataar = 20;
-}
 
-string Hozzavalok::getPogacsa() {
-	return pogacsa;
-}
+	string Hozzavalok::pogacsa = "pogacsa";
+	string Hozzavalok::hus = "hus";
+	string Hozzavalok::sajt = "sajt";
+	string Hozzavalok::salata = "salata";
+	string Hozzavalok::tofu = "tofu";
+	string Hozzavalok::uborka = "uborka";
+	string Hozzavalok::ketchup = "ketchup";
+	string Hozzavalok::mustar = "mustar";
+	int Hozzavalok::pogacsaar = 50;
+	int Hozzavalok::husar = 100;
+	int Hozzavalok::sajtar = 60;
+	int Hozzavalok::tofuar = 70;
+	int Hozzavalok::uborkaar = 20;
+	int Hozzavalok::ketchupar = 30;
+	int Hozzavalok::mustarar = 35;
+	int Hozzavalok::salataar = 20;
 
-string Hozzavalok::getHus() {
-	return hus;
-}
-
-string Hozzavalok::getSajt() {
-	return sajt;
-}
-
-string Hozzavalok::getSalata() {
-	return salata;
-}
-
-string Hozzavalok::getTofu() {
-	return tofu;
-}
-
-string Hozzavalok::getUborka() {
-	return uborka;
-}
-
-string Hozzavalok::getKetchup() {
-	return ketchup;
-}
-
-string Hozzavalok::getMustar() {
-	return mustar;
-}
-
-int Hozzavalok::getPogacsaAr()
-{
-	return pogacsaar;
-}
-
-int Hozzavalok::getHusAr()
-{
-	return husar;
-}
-
-int Hozzavalok::getSajtAr()
-{
-	return sajtar;
-}
-
-int Hozzavalok::getTofuAr()
-{
-	return tofuar;
-}
-
-int Hozzavalok::getUborkaAr()
-{
-	return uborkaar;
-}
-
-int Hozzavalok::getKetchuoAr()
-{
-	return ketchupar;
-}
-
-int Hozzavalok::getMustarAr()
-{
-	return mustarar;
-}
-int Hozzavalok::getSalataAr()
-{
-	return salataar;
-}
 
 void Hozzavalok::kiirat() {
-	cout << getPogacsa() << endl << getHus() << endl << getKetchup() << endl << getMustar() << endl << getSajt() << endl << getSalata() << endl << getTofu() << endl << getUborka() << endl;
+	cout << Hozzavalok::pogacsa << endl << Hozzavalok::hus << endl << Hozzavalok::ketchup << endl << Hozzavalok::mustar << endl << Hozzavalok::sajt << endl << Hozzavalok::salata << endl << Hozzavalok::tofu << endl << Hozzavalok::uborka << endl;
 }
 
 void Hozzavalok::kiiratsorszammal() {
-	cout << "1."<< getPogacsa() << endl << "2." << getHus() << endl << "3." << getKetchup() << endl << "4." << getMustar() << endl << "5." << getSajt() << endl
-		<< "6." << getSalata() << endl << "7." << getTofu() << endl << "8." << getUborka() << endl;
+	cout << "1."<< Hozzavalok::pogacsa << endl << "2." << Hozzavalok::hus << endl << "3." << Hozzavalok::ketchup << endl << "4." << Hozzavalok::mustar << endl << "5." << Hozzavalok::sajt << endl
+		<< "6." << Hozzavalok::salata << endl << "7." << Hozzavalok::tofu << endl << "8." << Hozzavalok::uborka << endl;
 }
 Hozzavalok::~Hozzavalok()
 {

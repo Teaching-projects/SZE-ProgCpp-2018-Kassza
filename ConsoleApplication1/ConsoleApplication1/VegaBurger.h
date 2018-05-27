@@ -11,9 +11,6 @@ private:
 	int menu;
 public:
 	VegaBurger();
-	VegaBurger(Hozzavalok e);
-	void HozzaAddAlapAnyagot(Hozzavalok e, int hozzaad);
-	void ElveszAlapAnyagot(Hozzavalok e, int elvesz);
 	void Kiir();
 	int getAr();
 	void KiirNev();
